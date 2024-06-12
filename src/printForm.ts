@@ -1,9 +1,11 @@
+import close from "./assets/icon/close.svg";
+
 export const printForm = (): string => {
   return `
         <div class="popup-form">
         <div class="popup-form__wrapper">
           <button class="popup-form__close" type="button" data-close>
-            <img src="./src/assets/icon/close.svg" alt="close" />
+            <img src="${close}" alt="close" />
           </button>
           <form class="form">
             <h2 class="form__title">Войти в систему</h2>
