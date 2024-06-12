@@ -1,0 +1,156 @@
+.demo {
+  background-color: $block-color;
+  border-radius: $radius-10;
+  overflow: hidden;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__content {
+    padding: 102px 72px;
+  }
+
+  & .content {
+    width: 511px;
+    margin-bottom: 36px;
+
+    &__title {
+      font-size: clamp(26px, calc(26px + (4 * (100vw - $m-1440)) / 480), 30px);
+      line-height: $l-height-160;
+      font-weight: 500;
+      margin-bottom: 18px;
+      color: $title-color;
+    }
+    &__description {
+      font-size: 17px;
+      line-height: $l-height-160;
+      font-weight: 400;
+      color: $text-color;
+    }
+  }
+
+  & .button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 12px 12px 24px;
+    width: 341px;
+    background-color: $button-color;
+    border-radius: 60px;
+    cursor: pointer;
+
+    &__label {
+      font-size: 18px;
+      line-height: $l-height-160;
+      font-weight: 500;
+      color: $light-color;
+    }
+
+    &__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: $light-color;
+
+      & > img {
+        width: 55%;
+        height: 55%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__image {
+    width: clamp(680px, calc(680px + (230 * (100vw - $m-1440)) / 480), 910px);
+    height: auto;
+    aspect-ratio: 16 / 9;
+
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+  }
+
+  @media (max-width: $m-1440) {
+    &__content {
+      padding: clamp(24px, calc(24px + (81 * (100vw - $m-768)) / 672), 105px)
+        clamp(24px, calc(24px + (48 * (100vw - $m-768)) / 672), 72px);
+    }
+
+    & .content {
+      &__title {
+        font-size: clamp(20px, calc(20px + (6 * (100vw - $m-768)) / 672), 26px);
+      }
+      &__description {
+        font-size: clamp(15px, calc(15px + (2 * (100vw - $m-768)) / 672), 17px);
+      }
+    }
+
+    & .button {
+      width: clamp(261px, calc(261px + (80 * (100vw - $m-768)) / 672), 341px);
+      padding: clamp(10px, calc(10px + (2 * (100vw - $m-768)) / 672), 12px)
+        clamp(10px, calc(10px + (2 * (100vw - $m-768)) / 672), 12px)
+        clamp(10px, calc(10px + (2 * (100vw - $m-768)) / 672), 12px)
+        clamp(18px, calc(18px + (6 * (100vw - $m-768)) / 672), 24px);
+
+      &__label {
+        font-size: clamp(15px, calc(15px + (3 * (100vw - $m-768)) / 672), 18px);
+      }
+      &__icon {
+        width: clamp(36px, calc(36px + (8 * (100vw - $m-768)) / 672), 44px);
+        height: clamp(36px, calc(36px + (8 * (100vw - $m-768)) / 672), 44px);
+      }
+    }
+  }
+
+  @media (max-width: $m-1080) {
+    &__wrapper {
+      flex-direction: column;
+    }
+    & .content {
+      width: 100%;
+      height: auto;
+    }
+    &__image {
+      width: 100%;
+      height: 360px;
+    }
+  }
+  @media (max-width: $m-768) {
+    & .content {
+      margin-bottom: clamp(
+        18px,
+        calc(18px + (6 * (100vw - $m-480)) / 288),
+        24px
+      );
+      &__title {
+        font-size: clamp(17px, calc(17px + (3 * (100vw - $m-480)) / 288), 20px);
+        margin-bottom: clamp(
+          14px,
+          calc(14px + (4 * (100vw - $m-480)) / 288),
+          18px
+        );
+      }
+      &__description {
+        font-size: clamp(13px, calc(13px + (2 * (100vw - $m-480)) / 288), 15px);
+      }
+    }
+    &__image {
+      width: 100%;
+      height: clamp(220px, calc(220px + (140 * (100vw - $m-480)) / 288), 360px);
+    }
+  }
+  @media (max-width: $m-480) {
+    & .button {
+      width: 100%;
+    }
+  }
+}

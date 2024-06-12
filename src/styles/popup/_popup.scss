@@ -1,0 +1,12 @@
+.popup {
+  position: absolute;
+  top: 50%;
+  background-color: transparent;
+  transform: translateY(-50%);
+  border: none;
+  outline: none;
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
